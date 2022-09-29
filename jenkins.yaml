@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+    - name: creatingimage
+      docker_image:
+        name: ubuntu
+        state: present
+    - name: creating container
+      docker_container:
+        name: cont2
+        image: ubuntu
